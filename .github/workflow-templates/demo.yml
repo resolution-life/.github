@@ -1,0 +1,27 @@
+name: Demo template
+
+on:
+  push:
+    branches:
+      - [$default-branch]
+
+jobs:
+  first-job:
+    runs-on: self-hosted
+    steps:
+      - name: Print Org variables
+        run: |
+            echo "Org level vars " ${{vars.RESLIFE_COURSE }}
+            echo "Org secrets ${{ secrets.TOP_SECRET_XYZ }}
+            echo "Org secrets ${{ secrets.TOP_SECRET_ABC }}
+            echo "Repo vars" ${{ vars.REPO_VAR }}
+  second-job:
+    environment: production
+    runs-on: self-hosted
+    steps:
+      - name: Print Org variables
+        run: |
+            echo "Org level vars " ${{vars.RESLIFE_COURSE }}
+            echo "Org secrets ${{ secrets.TOP_SECRET_XYZ }}
+            echo "Org secrets ${{ secrets.TOP_SECRET_ABC }}
+            echo "Repo vars" ${{ vars.REPO_VAR }}
