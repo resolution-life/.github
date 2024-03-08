@@ -1,0 +1,9 @@
+{
+  "name": "Demo template"
+  "description": "This is a demo for secrets and vars
+  "categories":[ 
+    "python",
+    "resolutionlife"
+  ],
+  "filePatterns: []
+}
